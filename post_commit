@@ -1,0 +1,9 @@
+#!/bin/sh
+echo "hook post-commit"
+message=$(git log -1|sed -n 6P)
+echo $message
+if [ $message = test ]; then
+        echo "git push skipped"
+else
+        git push
+fi

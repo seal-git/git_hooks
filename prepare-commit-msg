@@ -1,0 +1,6 @@
+#!/bin/sh
+COMMIT_MSG_FILE=$1
+echo "prepare-commit-msg"
+DATE=$(date '+%Y-%m-%d %H:%M:%S')
+sed -i'' -e "1i $DATE" $COMMIT_MSG_FILE
+cat $COMMIT_MSG_FILE
